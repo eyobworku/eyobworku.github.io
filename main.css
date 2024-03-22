@@ -1,0 +1,136 @@
+.navbar__logo {
+  width: 12rem;
+  height: 10rem;
+  object-fit: contain;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #fff;
+  /* padding: 2rem; */
+  font-family: "Roboto", sans-serif;
+  min-height: 100dvh;
+}
+
+html {
+  font-size: 62.5%;
+}
+.hero {
+  padding: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  justify-content: center;
+}
+.content-text {
+  font-size: 2rem;
+}
+@media screen and (max-width: 990px) {
+  .hero {
+    flex-direction: column;
+  }
+  .swiper {
+    order: -1;
+  }
+  .link-slider {
+    width: 300px;
+  }
+  .home-content {
+    /* width: 80%; */
+  }
+  .link-slider {
+    width: 90%;
+  }
+}
+/* swiper */
+.swiper {
+  height: 500px;
+  width: 254px;
+}
+.swiper-slide {
+  position: relative;
+  box-shadow: 0.15px 50px gba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  user-select: none;
+}
+.swiper-slide img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/*  */
+.img-postion {
+  object-position: 50% 0%;
+}
+.link-slider {
+  display: flex;
+  width: 350px;
+  overflow-x: hidden;
+}
+.links {
+  display: flex;
+  align-items: center;
+  animation: slide 4s infinite linear;
+}
+.links a {
+  padding: 0 20px;
+}
+.link-slider:hover .links {
+  animation-play-state: paused;
+}
+
+.app-link {
+  width: 150px;
+  height: 50px;
+}
+
+.tg-link {
+  width: 8rem;
+}
+.content-text li {
+  list-style: none;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* about */
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
+  background: #eee8a9;
+  padding: 20px;
+}
+.about > h2 {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.7);
+  margin: 20px auto;
+}
+.service-images {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.service-images img {
+  width: 150px;
+}

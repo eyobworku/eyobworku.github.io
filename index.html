@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swift Landing Page</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="navbar">
+        <img
+          class="navbar__logo"
+          src="https://sery.et/static/media/logo.1d45b2ac.png"
+        />
+      </div>
+      <div class="hero">
+        <div class="home-content">
+          <div class="content-text">
+            <h1>
+              ስዊፍት፤ ቀላል መፍትሄ፣ ለሁሉም <br />
+              ነገር በሁሉም ቦታ
+            </h1>
+            <ul>
+              <li>
+                <i class="bi bi-check2"></i>
+                <span>አገልግሎት በቤትዎ</span>
+              </li>
+              <li>
+                <i class="bi bi-check2"></i> <span>ታማኝ የደንበኞች አገልግሎት</span>
+              </li>
+              <li><i class="bi bi-check2"></i> <span>ፈጣን ምላሽ</span></li>
+              <li><i class="bi bi-check2"></i> <span>ጥራት እና መፍትሄ ተኮር</span></li>
+            </ul>
+          </div>
+          <div class="link-slider">
+            <div class="links">
+              <a href="#1">
+                <img class="app-link" src="img/playstore.245821aa.png" />
+              </a>
+              <a href="#2">
+                <img class="app-link" src="img/appstore.a4b0c643.png" />
+              </a>
+              <a href="#3">
+                <img class="tg-link" src="img/telegram.c8b65073.gif" />
+              </a>
+            </div>
+            <div class="links">
+              <a href="#1">
+                <img class="app-link" src="img/playstore.245821aa.png" />
+              </a>
+              <a href="#2">
+                <img class="app-link" src="img/appstore.a4b0c643.png" />
+              </a>
+              <a href="#3">
+                <img class="tg-link" src="img/telegram.c8b65073.gif" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="img/1000092372-portrait.png" />
+            </div>
+            <div class="swiper-slide">
+              <img class="img-postion" src="img//1000092379-portrait.png" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="about">
+        <h2>የፈለጉትን የአገልግሎት ዓይነት ከፈለጉት መስፈርት አንጻር መርጠው ይዘዙ።</h2>
+        <div class="service-images">
+          <img src="img/Electronics.78071320.jpg" />
+          <img src="img/Plumbing.cf141d13.jpg" />
+          <img src="img/Brokerage.023e7ef8.jpg" />
+          <img src="img/Vehicles.f06bc31d.jpg" />
+          <img src="img/Finishing.b5be806c.jpg" />
+          <img src="img/Cleaning.24740756.jpg" />
+          <img src="img/Delivery.df5d1c21.jpg" />
+          <img src="img/Software and IT.29b3786d.jpg" />
+        </div>
+      </div>
+    </div>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        effect: "cards",
+        grabCursor: true,
+        initialSlide: 2,
+        speed: 500,
+        loop: true,
+        rotate: true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 1000,
+        },
+        mousewheel: {
+          invert: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+      window.onscroll = function () {
+        // console.log(document.documentElement.scrollTop);
+        if (document.documentElement.scrollTop > 50) {
+          swiper.autoplay = false;
+        }
+        if (document.documentElement.scrollTop < 50) {
+          swiper.autoplay = { delay: 1000 };
+        }
+      };
+    </script>
+  </body>
+</html>
