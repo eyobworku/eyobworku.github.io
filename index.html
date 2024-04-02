@@ -17,8 +17,70 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="mobilenav close">
+        <div id="closemenu" class="mobilemenu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-x-lg"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"
+            />
+          </svg>
+        </div>
+
+        <ul class="mobilenav__items-list">
+          <li class="mobilenav__items-item">
+            <a aria-current="page" class="navitem active" href="#"
+              ><span>Home</span></a
+            >
+          </li>
+          <li class="mobilenav__items-item">
+            <a class="navitem" href="#footer"><span>Services</span></a>
+          </li>
+          <li class="mobilenav__items-item">
+            <a class="navitem" href="#about"><span>About</span></a>
+          </li>
+        </ul>
+      </div>
       <div class="navbar">
-        <img class="navbar__logo" src="img/logo.1d45b2ac.png" />
+        <a class="navbar__logo" href="/"
+          ><img src="img/logo.1d45b2ac.png" alt="swiftolio"
+        /></a>
+        <div class="navbar__items">
+          <ul class="navbar__items-list">
+            <li class="navbar__items-item">
+              <a aria-current="page" class="navitem active" href="#"
+                ><span>Home</span></a
+              >
+            </li>
+            <li class="navbar__items-item">
+              <a class="navitem" href="#footer"><span>Services</span></a>
+            </li>
+            <li class="navbar__items-item">
+              <a class="navitem" href="#about"><span>About</span></a>
+            </li>
+          </ul>
+        </div>
+        <div id="openmenu" class="mobilemenu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="25"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+            />
+          </svg>
+        </div>
       </div>
       <div class="hero">
         <div class="home-content">
@@ -76,7 +138,7 @@
           <div class="swiper-pagination"></div>
         </div>
       </div>
-      <div class="about">
+      <div class="about" id="about">
         <h2>የፈለጉትን የአገልግሎት ዓይነት ከፈለጉት መስፈርት አንጻር መርጠው ይዘዙ።</h2>
         <div class="service-images">
           <img src="img/Electronics.78071320.jpg" />
@@ -89,7 +151,7 @@
           <img src="img/Software and IT.29b3786d.jpg" />
         </div>
       </div>
-      <div class="footer">
+      <div class="footer" id="footer">
         <div class="top-footer">
           <p>
             At SERY, we believe in the power of connection to transform the way
@@ -225,6 +287,26 @@
           swiper.autoplay = { delay: 1000 };
         }
       };
+      const mobilenav = document.querySelector(".mobilenav");
+      function openMenu() {
+        mobilenav.classList.remove("close");
+        mobilenav.classList.add("open");
+      }
+      function closeMenu() {
+        mobilenav.classList.remove("open");
+        mobilenav.classList.add("close");
+      }
+      const mobilemenus = document.querySelectorAll(".mobilemenu");
+      mobilemenus.forEach((mobilemenu) => {
+        mobilemenu.addEventListener("click", () => {
+          console.log("man");
+          if (mobilenav.classList.contains("close")) {
+            openMenu();
+          } else {
+            closeMenu();
+          }
+        });
+      });
     </script>
   </body>
 </html>
